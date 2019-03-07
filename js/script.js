@@ -9,3 +9,6 @@ window.onload = function() {
     }
 }
 */
+
+//Set focus on the first (name) textbox.
+$("#name").focus();
