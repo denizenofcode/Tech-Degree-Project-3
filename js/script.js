@@ -25,3 +25,47 @@ $("#title").change(function(){
     $("#other-title").show();
   }
 });
+
+//For the T-Shirt "Color" menu, only display the color options
+//that match the design selected in the "Design" menu.
+
+//Display & Select Relevant Colors based on Design
+$("#design").change(function(){
+  let optionValue = $(this).val();
+  if (optionValue === "select theme") {
+    $("#cfb").show();
+    $("#dsg").show();
+    $("#g").show();
+    $("#t").show();
+    $("#sb").show();
+    $("#dg").show();
+  }
+});
+
+//Display & Select Relevant Colors based on Design
+$("#design").change(function(){
+  let optionValue = $(this).val();
+  if (optionValue === "js puns") {
+    $("#t").hide();
+    $("#sb").hide();
+    $("#dg").hide();
+    $("#cfb").show();
+    $("#dsg").show();
+    $("#g").show();
+    $("#color").val("cornflowerblue");
+  }
+});
+
+//Display & Select Relevant Colors based on Design
+$("#design").change(function(){
+  let optionValue = $(this).val();
+  if (optionValue === "heart js") {
+    $("#cfb").hide();
+    $("#dsg").hide();
+    $("#g").hide();
+    $("#t").show();
+    $("#sb").show();
+    $("#dg").show();
+    $("#color").val("tomato");
+  }
+});
