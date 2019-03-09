@@ -1,15 +1,14 @@
 //Test if jQuery is Working.
-/*
 window.onload = function() {
     if (window.jQuery) {
         // jQuery is loaded
-        alert("jQuery is working.");
+        console.log("jQuery is working.");
     } else {
         // jQuery is not loaded
-        alert("jQuery is not working.");
+        console.log("jQuery is not working.");
     }
 }
-*/
+
 
 //Set focus on the first text field.
 $("#name").focus();
@@ -67,5 +66,31 @@ $("#design").change(function(){
     $("#sb").show();
     $("#dg").show();
     $("#color").val("tomato");
+  }
+});
+
+//In the Register for Activities Section, Only Allow non-conflicting
+//events to be concurrently checked.
+$("#jsFrameworks").on("change", function() {
+  if(this.checked) {
+    $("#express").prop("checked", false);
+  }
+});
+
+$("#express").on("change", function() {
+  if(this.checked) {
+    $("#jsFrameworks").prop("checked", false);
+  }
+});
+
+$("#libraries").on("change", function() {
+  if(this.checked) {
+    $("#node").prop("checked", false);
+  }
+});
+
+$("#node").on("change", function() {
+  if(this.checked) {
+    $("#libraries").prop("checked", false);
   }
 });
