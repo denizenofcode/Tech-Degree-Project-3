@@ -7,7 +7,7 @@ window.onload = function() {
         // jQuery is not loaded
         console.log("jQuery is not working.");
     }
-}
+};
 
 
 //Set focus on the first text field.
@@ -93,4 +93,42 @@ $("#node").on("change", function() {
   if(this.checked) {
     $("#libraries").prop("checked", false);
   }
+});
+
+//Add up the total price for the events.
+let totalPriceNumber;
+$("#activityBoxes").on("change", function() {
+  //console.log("Checkbox clicked");
+  totalPriceNumber = 0;
+  if ($("#mainConf").prop("checked")) {
+    totalPriceNumber += 200;
+    console.log(totalPriceNumber);
+  }
+  if ($("#jsFrameworks").prop("checked")) {
+    totalPriceNumber += 100;
+    console.log(totalPriceNumber);
+  }
+  if ($("#libraries").prop("checked")) {
+    totalPriceNumber += 100;
+    console.log(totalPriceNumber);
+  }
+  if ($("#express").prop("checked")) {
+    totalPriceNumber += 100;
+    console.log(totalPriceNumber);
+  }
+  if ($("#node").prop("checked")) {
+    totalPriceNumber += 100;
+    console.log(totalPriceNumber);
+  }
+  if ($("#build").prop("checked")) {
+    totalPriceNumber += 100;
+    console.log(totalPriceNumber);
+  }
+  if ($("#npm").prop("checked")) {
+    totalPriceNumber += 100;
+    console.log(totalPriceNumber);
+  }
+
+  $("#totalPrice").html("Price: $" + totalPriceNumber);
+
 });
