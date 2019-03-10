@@ -130,5 +130,32 @@ $("#activityBoxes").on("change", function() {
   }
 
   $("#totalPrice").html("Price: $" + totalPriceNumber);
+});
 
+//Hide payment options other than cc on page load.  Set CC as select option.
+$("#paypal").hide();
+$("#bitcoin").hide();
+$("#payment").val("credit card");
+
+$("#payment").on("change", function() {
+  let optionValue = $(this).val();
+  //If paypal payment method selected, hide other payment methods/info.
+  if (optionValue === "paypal") {
+    $("#paypal").show();
+    $("#bitcoin").hide();
+    $("#credit-card").hide();
+  }
+
+  //If bitcoin payment method selected, hide other payment methods/info.
+  if (optionValue === "bitcoin") {
+    $("#paypal").hide();
+    $("#bitcoin").show();
+    $("#credit-card").hide();
+  }
+  //If credit card payment method selected, hide other payment methods/info.
+  if (optionValue === "credit card") {
+    $("#paypal").hide();
+    $("#bitcoin").hide();
+    $("#credit-card").show();
+  }
 });
