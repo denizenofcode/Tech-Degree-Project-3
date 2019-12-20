@@ -1,3 +1,4 @@
+/*
 //Test if jQuery is Working.
 window.onload = function() {
     if (window.jQuery) {
@@ -8,7 +9,7 @@ window.onload = function() {
         console.log("jQuery is not working.");
     }
 };
-
+*/
 
 //Set focus on the first text field.
 $("#name").focus();
